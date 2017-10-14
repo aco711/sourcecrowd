@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
+import styles from './styles';
 
 class AddPostScreen extends Component {
     render() {
