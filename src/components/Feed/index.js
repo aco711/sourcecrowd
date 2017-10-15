@@ -2,19 +2,28 @@ import React from 'react';
 import { View, Text, TouchableHighlight } from 'react-native';
 import styles from './styles';
 
-const Feed = ({ title, newPosts, children }) => (
+import PostCard from '../../components/PostCard';
+
+const Feed = ({ data, onPress }) => (
     <View style={ styles.container }>
         <View style={ styles.titleContainer }>
-            <Text style={ styles.title }>
-                { title }
-                <Text style={ styles.newPosts }>{ ` • ${ newPosts } new posts` }</Text>
-            </Text>
+            <TouchableHighlight style={ styles.titleHighlight } onPress={ onPress }>
+                <Text style={ styles.title }>
+                    { data.title }
+                    <Text style={ styles.newPosts }>{ ` • ${ data.newPosts } new posts` }</Text>
+                </Text>
+            </TouchableHighlight>
         </View>
         <View style={ styles.feedContainer }>
-            { React.Children.map(children, (child) => {
+            { data.postCards.map((post, i) => {
                 return (
-                    <View style={ styles.feedItem }>
-                        { child }
+                    <View style={ styles.feedItem } key={ i }>
+                        <PostCard
+                            title={ post.title }
+                            type={ String(post.type).toUpperCase() }
+                            timestamp={ post.timestamp }
+                            author={ post.author }
+                        />
                     </View>
                 );
             })}

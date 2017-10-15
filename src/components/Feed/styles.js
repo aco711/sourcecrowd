@@ -14,6 +14,9 @@ export default StyleSheet.create({
     titleContainer: {
         marginBottom: 10
     },
+    titleHighlight: {
+
+    },
     title: {
         color: COLOR_GRAY_4,
         fontSize: FONT_SIZE_2,

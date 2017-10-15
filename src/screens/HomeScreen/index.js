@@ -4,7 +4,8 @@ import styles from './styles';
 
 import SplitHeader from '../../components/SplitHeader';
 import Feed from '../../components/Feed';
-import PostCard from '../../components/PostCard';
+
+import makerbotData from '../../assets/data/makerbot.json';
 
 class HomeScreen extends Component {
     static navigationOptions = {
@@ -20,16 +21,9 @@ class HomeScreen extends Component {
                 </View>
                 <ScrollView>
                     <Feed
-                        title="Makerbot"
-                        newPosts={ 2 }
-                    >
-                        <PostCard
-                            title="There's a blue light that won’t turn off"
-                            type="NOTE"
-                            timestamp={ 20 }
-                            author="Ken M."
-                        />
-                    </Feed>
+                        data={ makerbotData }
+                        onPress={ () => navigate('StationScreen', { data: makerbotData }) }
+                    />
                 </ScrollView>
             </View>
         );

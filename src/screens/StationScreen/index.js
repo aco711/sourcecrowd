@@ -4,18 +4,21 @@ import styles from './styles';
 
 class HomeScreen extends Component {
     static navigationOptions = ({ navigation }) => {
-        const { name } = navigation.state.params;
+        const { data } = navigation.state.params;
         return {
-            title: name
+            title: data.title
         }
     };
 
     render() {
         const { navigate } = this.props.navigation;
-        const { name } = this.props.navigation.state.params;
+        const { data } = this.props.navigation.state.params;
+
         return (
-            <View>
-                <Text>{ `Welcome, ${name}` }</Text>
+            <View style={ styles.container }>
+                <View>
+
+                </View>
             </View>
         );
     }

@@ -15,10 +15,11 @@ export default StyleSheet.create({
         flexDirection: 'column',
         backgroundColor: COLOR_OFF_WHITE,
         padding: 16,
+        marginBottom: 20,
         borderRadius: 2,
         shadowOpacity: 0.25,
         shadowRadius: 2,
-        shadowOffset: { height: 0, width: 0 },
+        shadowOffset: { height: 2, width: 0 },
     },
     typeContainer: {
         flex: 1
