@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableHighlight, Button } from 'react-native';
+import { Text, View, TouchableHighlight, Button, ScrollView } from 'react-native';
 import styles from './styles';
 
 import SplitHeader from '../../components/SplitHeader';
 import Feed from '../../components/Feed';
-import NoteCard from '../../components/NoteCard';
+import PostCard from '../../components/PostCard';
 
 class HomeScreen extends Component {
     static navigationOptions = {
@@ -15,30 +15,22 @@ class HomeScreen extends Component {
         const { navigate } = this.props.navigation;
         return (
             <View style={ styles.container }>
-                <View style={ styles.splitHeaderContainer }>
-                    <SplitHeader>
-                        <View
-                            onPress={ () => {} }
-                            title="RECENT NOTES"
-                        />
-                        <View
-                            onPress={ () => {} }
-                            title="RECENT DISCUSSIONS"
-                        />
-                    </SplitHeader>
+                <View style={ styles.titleContainer }>
+                    <Text style={ styles.title }>RECENTLY VISITED STATIONS</Text>
                 </View>
-                <View style={ styles.feedContainer }>
+                <ScrollView>
                     <Feed
-                        title="MAKERBOT"
-                        style={ styles.feed }
+                        title="Makerbot"
+                        newPosts={ 2 }
                     >
-                        <NoteCard
+                        <PostCard
                             title="There's a blue light that won’t turn off"
+                            type="NOTE"
                             timestamp={ 20 }
                             author="Ken M."
                         />
                     </Feed>
-                </View>
+                </ScrollView>
             </View>
         );
     }

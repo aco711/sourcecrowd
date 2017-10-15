@@ -5,6 +5,8 @@ export const COLOR_GRAY_3 = '#BDBDBD';
 export const COLOR_GRAY_2 = '#E0E0E0';
 export const COLOR_GRAY_1 = '#F2F2F2';
 
+export const COLOR_OFF_WHITE = '#FCFCFC';
+
 export const COLOR_APPLE_RED = '#ff3b30';
 export const COLOR_APPLE_ORANGE = '#ff9500';
 export const COLOR_APPLE_YELLOW = '#ffcc00';
