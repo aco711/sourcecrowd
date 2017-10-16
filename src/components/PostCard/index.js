@@ -18,7 +18,7 @@ const PostCard = ({
     const card = (
         <View style={ styles.container }>
             <View style={ styles.typeContainer }>
-                <Text style={ styles.type }>{ type }</Text>
+                <Text style={ styles.type }>{ type.toUpperCase() }</Text>
             </View>
             <View style={ styles.titleContainer }>
                 <Text style={ styles.title }>{ title }</Text>
