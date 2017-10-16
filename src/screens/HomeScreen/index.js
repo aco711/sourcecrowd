@@ -16,10 +16,10 @@ class HomeScreen extends Component {
         const { navigate } = this.props.navigation;
         return (
             <View style={ styles.container }>
-                <View style={ styles.titleContainer }>
-                    <Text style={ styles.title }>RECENTLY VISITED STATIONS</Text>
-                </View>
-                <ScrollView>
+                <ScrollView style={ styles.scrollViewContainer }>
+                    <View style={ styles.titleContainer }>
+                        <Text style={ styles.title }>RECENTLY VISITED STATIONS</Text>
+                    </View>
                     <View style={ styles.feedTitleContainer }>
                         <TouchableHighlight 
                             style={ styles.feedTitleHighlight } 

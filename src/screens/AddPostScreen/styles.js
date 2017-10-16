@@ -7,10 +7,12 @@ import {
 
 export default StyleSheet.create({
     container: {
-        paddingTop: 40,
-        padding: 20,
         backgroundColor: COLOR_WHITE,
         flex: 1
+    },
+    formContainer: {
+        paddingTop: 40,
+        padding: 20,
     },
     titleInput: {
         fontSize: FONT_SIZE_5

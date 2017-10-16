@@ -19,7 +19,7 @@ class HomeScreen extends Component {
 
         return (
             <View style={ styles.container }>
-                <ScrollView>
+                <ScrollView style={ styles.scrollViewContainer }>
                     <View style={ styles.feedContainer }>
                         <Text style={ styles.feedTitle }>
                             Recent Notes

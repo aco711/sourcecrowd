@@ -13,8 +13,10 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'column',
-        padding: 20,
         backgroundColor: COLOR_WHITE
+    },
+    scrollViewContainer: {
+        padding: 20,
     },
     titleContainer: {
         marginBottom: 20

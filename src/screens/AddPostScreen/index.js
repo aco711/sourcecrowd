@@ -5,8 +5,8 @@ import styles from './styles';
 import BottomButton from '../../components/BottomButton';
 
 class AddPostScreen extends Component {
-    static navigationOptions = () => ({
-        title: 'New Post'
+    static navigationOptions = ({ navigation }) => ({
+        title: `New Post in ${ navigation.state.params.station }`
     });
 
     constructor(props) {
@@ -19,9 +19,10 @@ class AddPostScreen extends Component {
     }
 
     submitPost = () => {
-        const { navigate } = this.props.navigation;
+        const { goBack } = this.props.navigation;
+        const { station } = this.props.navigation.state.params;
 
-        navigate('AddPostScreen', { station: data.title })
+        goBack();
     }
 
     render() {
@@ -30,29 +31,31 @@ class AddPostScreen extends Component {
 
         return (
             <View style={ styles.container }>
-                <View style={ styles.titleInputContainer }>
-                    <TextInput
-                        style={ styles.titleInput }
-                        placeholder={`New Post in ${ station }`}
-                        onChangeText={ (text) => { this.setState({titleText: text}) }}
-                        multiline={ true }
-                    />
-                </View>
-                <View style={ styles.descriptionInputContainer }>
-                    <TextInput
-                        style={ styles.descriptionInput }
-                        placeholder="Add a description"
-                        multiline={ true }
-                        onChangeText={ (text) => { this.setState({descriptionText: text}) }}
-                    />
-                </View>
-                <View>
-                    <Picker
-                        selectedValue={ this.state.type }
-                        onValueChange={(itemValue) => this.setState({type: itemValue})}>
-                        <Picker.Item label="Note" value="note" />
-                        <Picker.Item label="Discussion" value="discussion" />
-                    </Picker>
+                <View style={ styles.formContainer }>
+                    <View style={ styles.titleInputContainer }>
+                        <TextInput
+                            style={ styles.titleInput }
+                            placeholder={`New Post in ${ station }`}
+                            onChangeText={ (text) => { this.setState({titleText: text}) }}
+                            multiline={ true }
+                        />
+                    </View>
+                    <View style={ styles.descriptionInputContainer }>
+                        <TextInput
+                            style={ styles.descriptionInput }
+                            placeholder="Add a description"
+                            multiline={ true }
+                            onChangeText={ (text) => { this.setState({descriptionText: text}) }}
+                        />
+                    </View>
+                    <View>
+                        <Picker
+                            selectedValue={ this.state.type }
+                            onValueChange={(itemValue) => this.setState({type: itemValue})}>
+                            <Picker.Item label="Note" value="note" />
+                            <Picker.Item label="Discussion" value="discussion" />
+                        </Picker>
+                    </View>
                 </View>
                 <BottomButton
                     onPress={ this.submitPost }
