@@ -39,7 +39,8 @@ class HomeScreen extends Component {
                     </View>
                 </ScrollView>
                 <BottomButton 
-                    onPress={ () => navigate('AddPostScreen', { title: 'New Post in ' + data.title }) }
+                    onPress={ () => navigate('AddPostScreen', { station: data.title }) }
+                    title="Add a new note or discussion"
                 />
             </View>
         );

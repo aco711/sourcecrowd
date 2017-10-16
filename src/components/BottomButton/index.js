@@ -2,12 +2,15 @@ import React from 'react';
 import { View, Text, TouchableHighlight } from 'react-native';
 import styles from './styles';
 
-const BottomButton = () => (
-    <View style={ styles.container }>
+const BottomButton = ({ onPress, title }) => (
+    <TouchableHighlight 
+        style={ styles.container }
+        onPress={ onPress }
+    >
         <View style={ styles.textContainer }>
-            <Text style={ styles.text }>Add a new note or discussion</Text>
+            <Text style={ styles.text }>{ title }</Text>
         </View>
-    </View>
+    </TouchableHighlight>
 );
 
 export default BottomButton;
