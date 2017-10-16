@@ -1,14 +1,12 @@
 import AddPostScreen from './AddPostScreen';
-import DiscussionsScreen from './DiscussionsScreen';
 import HomeScreen from './HomeScreen';
-import NotesScreen from './NotesScreen';
+import PostScreen from './PostScreen';
 import StationScreen from './StationScreen';
 
 const Screens = {
     AddPostScreen,
-    DiscussionsScreen,
+    PostScreen,
     HomeScreen,
-    NotesScreen,
     StationScreen,   
 };
 

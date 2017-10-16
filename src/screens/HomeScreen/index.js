@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Text, View, TouchableHighlight, Button, ScrollView } from 'react-native';
 import styles from './styles';
 
-import SplitHeader from '../../components/SplitHeader';
 import Feed from '../../components/Feed';
 
 import makerbotData from '../../assets/data/makerbot.json';
@@ -31,7 +30,10 @@ class HomeScreen extends Component {
                             </Text>
                         </TouchableHighlight>
                     </View>
-                    <Feed data={ makerbotData } />
+                    <Feed
+                        data={ makerbotData } 
+                        navigation={ this.props.navigation }
+                    />
                 </ScrollView>
             </View>
         );

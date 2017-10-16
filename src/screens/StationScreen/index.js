@@ -26,7 +26,9 @@ class HomeScreen extends Component {
                         </Text>
                         <Feed
                             data={ data } 
-                            filter={ datum => datum.type === 'note' }/>
+                            filter={ datum => datum.type === 'note' }
+                            navigation={ this.props.navigation }
+                        />
                     </View>
                     <View style={ styles.feedContainer }>
                         <Text style={ styles.feedTitle }>
@@ -35,6 +37,7 @@ class HomeScreen extends Component {
                         <Feed
                             data={ data } 
                             filter={ datum => datum.type === 'discussion' }
+                            navigation={ this.props.navigation }
                         />
                     </View>
                 </ScrollView>

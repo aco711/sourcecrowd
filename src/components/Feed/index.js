@@ -4,7 +4,7 @@ import styles from './styles';
 
 import PostCard from '../../components/PostCard';
 
-const Feed = ({ data, filter }) => {
+const Feed = ({ data, filter, navigation }) => {
     let postCards = data.postCards;
     if (filter !== undefined) {
         postCards = data.postCards.filter(filter);
@@ -17,10 +17,8 @@ const Feed = ({ data, filter }) => {
                     return (
                         <View style={ styles.feedItem } key={ i }>
                             <PostCard
-                                title={ post.title }
-                                type={ String(post.type).toUpperCase() }
-                                timestamp={ post.timestamp }
-                                author={ post.author }
+                                post={ post }
+                                navigation={ navigation }
                             />
                         </View>
                     );

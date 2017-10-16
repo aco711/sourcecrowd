@@ -6,16 +6,14 @@ import Screens from './src/screens';
 const { 
     HomeScreen,
     AddPostScreen,
-    DiscussionsScreen,
-    NotesScreen,
+    PostScreen,
     StationScreen
 } = Screens;
 
 const App = StackNavigator({
     HomeScreen: { screen: HomeScreen },
     AddPostScreen: { screen: AddPostScreen },
-    DiscussionsScreen: { screen: DiscussionsScreen },
-    NotesScreen: { screen: NotesScreen },
+    PostScreen: { screen: PostScreen },
     StationScreen: { screen: StationScreen },
 });
 
