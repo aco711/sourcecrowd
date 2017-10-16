@@ -20,10 +20,18 @@ class HomeScreen extends Component {
                     <Text style={ styles.title }>RECENTLY VISITED STATIONS</Text>
                 </View>
                 <ScrollView>
-                    <Feed
-                        data={ makerbotData }
-                        onPress={ () => navigate('StationScreen', { data: makerbotData }) }
-                    />
+                    <View style={ styles.feedTitleContainer }>
+                        <TouchableHighlight 
+                            style={ styles.feedTitleHighlight } 
+                            onPress={ () => navigate('StationScreen', { data: makerbotData }) }
+                        >
+                            <Text style={ styles.feedTitle }>
+                                { makerbotData.title }
+                                <Text style={ styles.newPosts }>{ ` • ${ makerbotData.newPosts } new posts` }</Text>
+                            </Text>
+                        </TouchableHighlight>
+                    </View>
+                    <Feed data={ makerbotData } />
                 </ScrollView>
             </View>
         );

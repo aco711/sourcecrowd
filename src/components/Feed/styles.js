@@ -11,20 +11,6 @@ export default StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
     },
-    titleContainer: {
-        marginBottom: 10
-    },
-    titleHighlight: {
-
-    },
-    title: {
-        color: COLOR_GRAY_4,
-        fontSize: FONT_SIZE_2,
-        fontWeight: '600'
-    },
-    newPosts: {
-        color: COLOR_APPLE_GREEN
-    },
     feedContainer: {
         flex: 1,
         flexDirection: 'column',
