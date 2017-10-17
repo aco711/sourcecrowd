@@ -3,16 +3,21 @@ import { Text, View, TouchableHighlight, Button, ScrollView } from 'react-native
 import styles from './styles';
 
 import Feed from '../../components/Feed';
-
-import makerbotData from '../../assets/data/makerbot.json';
+import API from '../../lib/api';
 
 class HomeScreen extends Component {
+    constructor(props) {
+        super(props);
+    }
+
     static navigationOptions = {
         title: 'Ford Design Studio'
     }
 
     render() {
         const { navigate } = this.props.navigation;
+        const makerbotData = API.fetch();
+        
         return (
             <View style={ styles.container }>
                 <ScrollView style={ styles.scrollViewContainer }>

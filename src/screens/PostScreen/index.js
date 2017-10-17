@@ -4,7 +4,7 @@ import styles from './styles';
 import capitalize from 'lodash.capitalize';
 
 import BottomButton from '../../components/BottomButton';
-import makerbotData from '../../assets/data/makerbot.json';
+import API from '../../lib/api';
 
 class HomeScreen extends Component {
     static navigationOptions = ({ navigation }) => {
@@ -18,6 +18,7 @@ class HomeScreen extends Component {
     render() {
         const { navigate } = this.props.navigation;
         const { post } = this.props.navigation.state.params;
+        const makerbotData = API.fetch();
 
         return (
             <View style={ styles.container }>
