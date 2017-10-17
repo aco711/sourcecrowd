@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, TouchableHighlight, Button, ScrollView } from 'react-native';
 import styles from './styles';
 import capitalize from 'lodash.capitalize';
+import moment from 'moment';
 
 import BottomButton from '../../components/BottomButton';
 import API from '../../lib/api';
@@ -31,10 +32,11 @@ class HomeScreen extends Component {
                     <View style={ styles.titleContainer }>
                         <Text style={ styles.title }>{ post.title }</Text>
                     </View>
-                    <Text style={ styles.metadata }>{`Posted ${ post.timestamp } ago by ${ post.author }`}</Text>
+                    <Text style={ styles.metadata }>{`Posted ${ moment(post.timestamp).fromNow() } by ${ post.author }`}</Text>
                 </View>
                 <BottomButton 
                     title="Add a reply"
+                    onPress={ () => navigate('AddReplyScreen', { post }) }
                 />
             </View>
         );

@@ -3,10 +3,11 @@ import { Text, View, TextInput, Picker } from 'react-native';
 import styles from './styles';
 
 import BottomButton from '../../components/BottomButton';
+import API from '../../lib/api';
 
 class AddPostScreen extends Component {
     static navigationOptions = ({ navigation }) => ({
-        title: `New Post in ${ navigation.state.params.station }`
+        title: `New Post in ${ navigation.state.params.data.title }`
     });
 
     constructor(props) {
@@ -20,14 +21,24 @@ class AddPostScreen extends Component {
 
     submitPost = () => {
         const { goBack } = this.props.navigation;
-        const { station } = this.props.navigation.state.params;
+        const { data } = this.props.navigation.state.params;
+        const { titleText, descriptionText, type } = this.state;
+
+        API.addPost({
+            title: titleText,
+            type: type,
+            description: descriptionText,
+            author: 'Me',
+            timestamp: Date.now(),
+            station: data.title
+        });
 
         goBack();
     }
 
     render() {
         const { navigate } = this.props.navigation;
-        const { station } = this.props.navigation.state.params;
+        const { data } = this.props.navigation.state.params;
 
         return (
             <View style={ styles.container }>
@@ -35,7 +46,7 @@ class AddPostScreen extends Component {
                     <View style={ styles.titleInputContainer }>
                         <TextInput
                             style={ styles.titleInput }
-                            placeholder={`New Post in ${ station }`}
+                            placeholder={`New Post in ${ data.title }`}
                             onChangeText={ (text) => { this.setState({titleText: text}) }}
                             multiline={ true }
                         />

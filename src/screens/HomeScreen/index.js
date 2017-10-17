@@ -16,7 +16,7 @@ class HomeScreen extends Component {
 
     render() {
         const { navigate } = this.props.navigation;
-        const makerbotData = API.fetch();
+        const data = API.fetch();
         
         return (
             <View style={ styles.container }>
@@ -27,16 +27,16 @@ class HomeScreen extends Component {
                     <View style={ styles.feedTitleContainer }>
                         <TouchableHighlight 
                             style={ styles.feedTitleHighlight } 
-                            onPress={ () => navigate('StationScreen', { data: makerbotData }) }
+                            onPress={ () => navigate('StationScreen', { data }) }
                         >
                             <Text style={ styles.feedTitle }>
-                                { makerbotData.title }
-                                <Text style={ styles.newPosts }>{ ` • ${ makerbotData.newPosts } new posts` }</Text>
+                                { data.title }
+                                <Text style={ styles.newPosts }>{ ` • ${ data.newPosts } new posts` }</Text>
                             </Text>
                         </TouchableHighlight>
                     </View>
                     <Feed
-                        data={ makerbotData } 
+                        data={ data } 
                         navigation={ this.props.navigation }
                     />
                 </ScrollView>

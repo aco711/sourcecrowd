@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableHighlight } from 'react-native';
+import moment from 'moment';
 import styles from './styles';
 
 const PostCard = ({ 
@@ -24,7 +25,7 @@ const PostCard = ({
                 <Text style={ styles.title }>{ title }</Text>
             </View>
             <View style={ styles.metadataContainer }>
-                <Text style={ styles.metadata }>{`Posted ${ timestamp } ago by ${ author }`}</Text>
+                <Text style={ styles.metadata }>{`Posted ${ moment(timestamp).fromNow() } by ${ author }`}</Text>
             </View>
         </View>
     );

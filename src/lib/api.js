@@ -10,8 +10,8 @@ class API {
         return this.data;
     }
 
-    update(key, value) {
-        this.data[key] = value;
+    addPost(post) {
+        this.data.postCards.push(post);
         try {
             AsyncStorage.setItem('appData', JSON.stringify(this.data));
         } catch (err) {
