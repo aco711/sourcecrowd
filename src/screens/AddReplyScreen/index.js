@@ -5,7 +5,7 @@ import styles from './styles';
 import BottomButton from '../../components/BottomButton';
 import API from '../../lib/api';
 
-class AddPostScreen extends Component {
+class AddReplyScreen extends Component {
     static navigationOptions = ({ navigation }) => ({
         title: `New Reply in ${ navigation.state.params.post.title }`
     });
@@ -84,4 +84,4 @@ class AddPostScreen extends Component {
     }
 }
 
-export default AddPostScreen;
+export default AddReplyScreen;
