@@ -14,7 +14,7 @@ class AddPostScreen extends Component {
         super(props);
         this.state = {
             titleText: '',
-            descriptionText: '',
+            bodyText: '',
             type: 'note'
         };
     }
@@ -22,12 +22,12 @@ class AddPostScreen extends Component {
     submitPost = () => {
         const { goBack } = this.props.navigation;
         const { data } = this.props.navigation.state.params;
-        const { titleText, descriptionText, type } = this.state;
+        const { titleText, bodyText, type } = this.state;
 
         API.addPost({
             title: titleText,
             type: type,
-            description: descriptionText,
+            body: bodyText,
             author: 'Me',
             timestamp: Date.now(),
             station: data.title
@@ -51,12 +51,12 @@ class AddPostScreen extends Component {
                             multiline={ true }
                         />
                     </View>
-                    <View style={ styles.descriptionInputContainer }>
+                    <View style={ styles.bodyInputContainer }>
                         <TextInput
-                            style={ styles.descriptionInput }
+                            style={ styles.bodyInput }
                             placeholder="Add a description"
                             multiline={ true }
-                            onChangeText={ (text) => { this.setState({descriptionText: text}) }}
+                            onChangeText={ (text) => { this.setState({bodyText: text}) }}
                         />
                     </View>
                     <View>

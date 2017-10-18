@@ -20,7 +20,7 @@ export default StyleSheet.create({
     titleInputContainer: {
         marginBottom: 20,
     },
-    descriptionInput: {
+    bodyInput: {
         fontSize: FONT_SIZE_3,
         lineHeight: 2
     }

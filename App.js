@@ -9,7 +9,8 @@ const {
     HomeScreen,
     AddPostScreen,
     PostScreen,
-    StationScreen
+    StationScreen,
+    AddReplyScreen
 } = Screens;
 
 const Nav = StackNavigator({
@@ -17,13 +18,10 @@ const Nav = StackNavigator({
     AddPostScreen: { screen: AddPostScreen },
     PostScreen: { screen: PostScreen },
     StationScreen: { screen: StationScreen },
-})
+    AddReplyScreen: { screen: AddReplyScreen }
+});
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return <Nav/>;
     }
