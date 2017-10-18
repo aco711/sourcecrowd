@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, TextInput, Picker } from 'react-native';
+import { Text, View, TextInput, Picker, Keyboard } from 'react-native';
 import styles from './styles';
 
 import BottomButton from '../../components/BottomButton';
@@ -15,13 +15,36 @@ class AddPostScreen extends Component {
         this.state = {
             titleText: '',
             bodyText: '',
-            type: 'note'
+            type: 'note',
+            keyboardUp: false
         };
+    }
+
+    componentWillMount() {
+        this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this.keyboardDidShow);
+        this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this.keyboardDidHide);
+    }
+
+    componentWillUnmount () {
+        this.keyboardDidShowListener.remove();
+        this.keyboardDidHideListener.remove();
+    }
+
+    keyboardDidShow = () => {
+        this.setState({
+            keyboardUp: true
+        });
+    }
+
+    keyboardDidHide = () => {
+        this.setState({
+            keyboardUp: false
+        });
     }
 
     submitPost = () => {
         const { goBack } = this.props.navigation;
-        const { data } = this.props.navigation.state.params;
+        const { data, updateParent } = this.props.navigation.state.params;
         const { titleText, bodyText, type } = this.state;
 
         API.addPost({
@@ -33,6 +56,7 @@ class AddPostScreen extends Component {
             station: data.title
         });
 
+        updateParent();
         goBack();
     }
 
@@ -71,6 +95,7 @@ class AddPostScreen extends Component {
                 <BottomButton
                     onPress={ this.submitPost }
                     title={`Submit ${ this.state.type }`}
+                    keyboardUp={ this.state.keyboardUp }
                 />
             </View>
         );

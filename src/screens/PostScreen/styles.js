@@ -17,6 +17,7 @@ export default StyleSheet.create({
         padding: 20,
     },
     titleContainer: {
+
         marginTop: 10,
         marginBottom: 10
     },
@@ -39,6 +40,9 @@ export default StyleSheet.create({
     },
     replyContainer: {
         marginTop: 20
+    },
+    repliesBottomSpacer: {
+        height: 100
     },
     replyBody: {
         marginBottom: 10

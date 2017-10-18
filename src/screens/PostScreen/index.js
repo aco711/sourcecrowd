@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableHighlight, Button, FlatList } from 'react-native';
+import { Text, View, TouchableHighlight, Button, FlatList, ScrollView } from 'react-native';
 import styles from './styles';
 import capitalize from 'lodash.capitalize';
 import moment from 'moment';
@@ -7,7 +7,14 @@ import moment from 'moment';
 import BottomButton from '../../components/BottomButton';
 import API from '../../lib/api';
 
-class HomeScreen extends Component {
+class PostScreen extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            flip: true
+        };
+    }
+
     static navigationOptions = ({ navigation }) => {
         const { post } = navigation.state.params;
 
@@ -23,7 +30,7 @@ class HomeScreen extends Component {
 
         return (
             <View style={ styles.container }>
-                <View style={ styles.postContainer }>
+                <ScrollView style={ styles.postContainer }>
                     <TouchableHighlight
                         onPress={ () => navigate('StationScreen', { data }) }
                     >
@@ -39,7 +46,7 @@ class HomeScreen extends Component {
                     }
                     <Text style={ styles.metadata }>{`Posted ${ moment(post.timestamp).fromNow() } by ${ post.author }`}</Text>
                     { post.replies &&
-                        <View style={ styles.repliesContainer }> 
+                        <View style={ styles.repliesContainer }>
                             <Text style={ styles.metadata }>REPLIES</Text>
                             <FlatList 
                                 data={ post.replies }
@@ -50,17 +57,20 @@ class HomeScreen extends Component {
                                     </View>
                                 }
                                 keyExtractor={ (item, index) => index }
+                                scrollEnabled={ false }
+                                extraData={ this.state }
                             />
+                            <View style={ styles.repliesBottomSpacer } />
                         </View>
                     }
-                </View>
+                </ScrollView>
                 <BottomButton 
                     title="Add a reply"
-                    onPress={ () => navigate('AddReplyScreen', { post }) }
+                    onPress={ () => navigate('AddReplyScreen', { post, updateParent: () => { this.setState({ flip: !this.state.flip }) } }) }
                 />
             </View>
         );
     }
 }
 
-export default HomeScreen;
+export default PostScreen;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, TextInput, Picker } from 'react-native';
+import { Text, View, TextInput, Keyboard } from 'react-native';
 import styles from './styles';
 
 import BottomButton from '../../components/BottomButton';
@@ -13,13 +13,36 @@ class AddPostScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            bodyText: ''
+            bodyText: '',
+            keyboardUp: false
         };
+    }
+
+    componentWillMount() {
+        this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this.keyboardDidShow);
+        this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this.keyboardDidHide);
+    }
+
+    componentWillUnmount () {
+        this.keyboardDidShowListener.remove();
+        this.keyboardDidHideListener.remove();
+    }
+
+    keyboardDidShow = () => {
+        this.setState({
+            keyboardUp: true
+        });
+    }
+
+    keyboardDidHide = () => {
+        this.setState({
+            keyboardUp: false
+        });
     }
 
     submitReply = () => {
         const { goBack } = this.props.navigation;
-        const { post } = this.props.navigation.state.params;
+        const { post, updateParent } = this.props.navigation.state.params;
         const { bodyText } = this.state;
 
         API.addReply(post, {
@@ -28,6 +51,7 @@ class AddPostScreen extends Component {
             timestamp: Date.now(),
         });
 
+        updateParent();
         goBack();
     }
 
@@ -45,14 +69,15 @@ class AddPostScreen extends Component {
                         <TextInput
                             style={ styles.bodyInput }
                             placeholder="Add your reply here"
-                            multiline={ true }
                             onChangeText={ (text) => { this.setState({bodyText: text}) }}
+                            onSubmitEditing={ () => this.submitReply() }
                         />
                     </View>
                 </View>
                 <BottomButton
                     onPress={ this.submitReply }
                     title={`Submit reply`}
+                    keyboardUp={ this.state.keyboardUp }
                 />
             </View>
         );

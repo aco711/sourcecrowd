@@ -22,4 +22,7 @@ export default StyleSheet.create({
         fontWeight: '600',
         marginBottom: 10
     },
+    repliesBottomSpacer: {
+        height: 100
+    },
 });

@@ -5,7 +5,14 @@ import styles from './styles';
 import Feed from '../../components/Feed';
 import BottomButton from '../../components/BottomButton';
 
-class HomeScreen extends Component {
+class StationScreen extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            flip: true
+        };
+    }
+
     static navigationOptions = ({ navigation }) => {
         const { data } = navigation.state.params;
         return {
@@ -40,9 +47,10 @@ class HomeScreen extends Component {
                             navigation={ this.props.navigation }
                         />
                     </View>
+                    <View style={ styles.repliesBottomSpacer } />
                 </ScrollView>
                 <BottomButton 
-                    onPress={ () => navigate('AddPostScreen', { data }) }
+                    onPress={ () => navigate('AddPostScreen', { data, updateParent: () => { this.setState({ flip: !this.state.flip }) } }) }
                     title="Add a new note or discussion"
                 />
             </View>
@@ -50,4 +58,4 @@ class HomeScreen extends Component {
     }
 }
 
-export default HomeScreen;
+export default StationScreen;

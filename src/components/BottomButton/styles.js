@@ -9,7 +9,6 @@ import {
 export default StyleSheet.create({
     container: {
         position: 'absolute',
-        bottom: 0,
         height: 50,
         width: 300,
         alignSelf: 'center',
@@ -23,5 +22,11 @@ export default StyleSheet.create({
     text: {
         color: COLOR_OFF_WHITE,
         paddingTop: 20
+    },
+    keyboardUp: {
+        bottom: 225
+    },
+    keyboardDown: {
+        bottom: 0
     }
 });
