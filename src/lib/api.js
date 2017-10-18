@@ -11,7 +11,7 @@ class API {
     }
 
     addPost(post) {
-        this.data.postCards.push(post);
+        this.data.posts.push(post);
         try {
             AsyncStorage.setItem('appData', JSON.stringify(this.data));
         } catch (err) {

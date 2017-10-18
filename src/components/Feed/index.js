@@ -5,15 +5,15 @@ import styles from './styles';
 import PostCard from '../../components/PostCard';
 
 const Feed = ({ data, filter, navigation }) => {
-    let postCards = data.postCards;
+    let posts = data.posts;
     if (filter !== undefined) {
-        postCards = data.postCards.filter(filter);
+        posts = data.posts.filter(filter);
     }
 
     return (
         <View style={ styles.container }>
             <View style={ styles.feedContainer }>
-                { postCards.map((post, i) => {
+                { posts.map((post, i) => {
                     return (
                         <View style={ styles.feedItem } key={ i }>
                             <PostCard

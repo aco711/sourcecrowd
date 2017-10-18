@@ -2,8 +2,10 @@ import { StyleSheet } from 'react-native';
 import {
     COLOR_WHITE,
     COLOR_GRAY_4,
+    FONT_SIZE_1,
+    FONT_SIZE_2,
+    FONT_SIZE_3,
     FONT_SIZE_5,
-    FONT_SIZE_1
 } from '../../config/styles';
 
 export default StyleSheet.create({
@@ -21,8 +23,24 @@ export default StyleSheet.create({
     title: {
         fontSize: FONT_SIZE_5,
     },
+    bodyContainer: {
+        marginBottom: 10
+    },
+    body: {
+        lineHeight: FONT_SIZE_3,
+        fontSize: FONT_SIZE_2
+    },
     metadata: {
         fontSize: FONT_SIZE_1,
         color: COLOR_GRAY_4,
+    },
+    repliesContainer: {
+        marginTop: 20,
+    },
+    replyContainer: {
+        marginTop: 20
+    },
+    replyBody: {
+        marginBottom: 10
     }
 });

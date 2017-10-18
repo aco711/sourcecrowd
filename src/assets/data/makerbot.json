@@ -1,34 +1,71 @@
 {
     "title": "MakerBot Replicator",
     "newPosts": 2,
-    "postCards": [
+    "posts": [
         {
             "title": "There's a blue light that won’t turn off",
+            "body": "I’ve burned through three pieces of wood already  by using too much power on the laser cutter. Does anyone have a good guide on power settings to use on wood?",
             "type": "note",
             "station": "Makerbot Replicator",
             "timestamp": 20,
-            "author": "Ken M."
+            "author": "Ken M.",
+            "replies": [
+                {
+                    "body": "We’ve checked out the light. The filter needed changing, and we’ve swapped it out with a new one.",
+                    "author": "Beth",
+                    "timestamp": 20
+                },
+                {
+                    "body": "We’ve checked out the light. The filter needed changing, and we’ve swapped it out with a new one.",
+                    "author": "Beth",
+                    "timestamp": 20
+                }
+            ]
         },
         {
             "title": "There's a blue light that won’t turn off",
+            "body": "I’ve burned through three pieces of wood already  by using too much power on the laser cutter. Does anyone have a good guide on power settings to use on wood?",
             "type": "note",
             "station": "Makerbot Replicator",
             "timestamp": 20,
-            "author": "Ken M."
+            "author": "Ken M.",
+            "replies": [
+                {
+                    "body": "We’ve checked out the light. The filter needed changing, and we’ve swapped it out with a new one.",
+                    "author": "Beth",
+                    "timestamp": 20
+                }
+            ]
         },
         {
             "title": "What are the best settings for engraving on wood?",
+            "body": "I’ve burned through three pieces of wood already  by using too much power on the laser cutter. Does anyone have a good guide on power settings to use on wood?",
             "type": "discussion",
             "station": "Makerbot Replicator",
             "timestamp": 20,
-            "author": "Ken M."
+            "author": "Ken M.",
+            "replies": [
+                {
+                    "body": "We’ve checked out the light. The filter needed changing, and we’ve swapped it out with a new one.",
+                    "author": "Beth",
+                    "timestamp": 20
+                }
+            ]
         },
         {
             "title": "What are the best settings for engraving on wood?",
+            "body": "I’ve burned through three pieces of wood already  by using too much power on the laser cutter. Does anyone have a good guide on power settings to use on wood?",
             "type": "discussion",
             "station": "Makerbot Replicator",
             "timestamp": 20,
-            "author": "Ken M."
+            "author": "Ken M.",
+            "replies": [
+                {
+                    "body": "We’ve checked out the light. The filter needed changing, and we’ve swapped it out with a new one.",
+                    "author": "Beth",
+                    "timestamp": 20
+                }
+            ]
         }
     ]
 }
