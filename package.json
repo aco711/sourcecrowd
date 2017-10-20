@@ -1,29 +1,31 @@
 {
-  "name": "sourcecrowd",
-  "version": "0.1.0",
-  "private": true,
-  "devDependencies": {
-    "react-native-scripts": "1.5.0",
-    "jest-expo": "^21.0.2",
-    "react-test-renderer": "16.0.0-alpha.12"
-  },
-  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
-  "scripts": {
-    "start": "react-native-scripts start",
-    "eject": "react-native-scripts eject",
-    "android": "react-native-scripts android",
-    "ios": "react-native-scripts ios",
-    "test": "node node_modules/jest/bin/jest.js --watch"
-  },
-  "jest": {
-    "preset": "jest-expo"
-  },
-  "dependencies": {
-    "expo": "^21.0.0",
-    "lodash.capitalize": "^4.2.1",
-    "moment": "^2.19.1",
-    "react": "16.0.0-alpha.12",
-    "react-native": "^0.48.4",
-    "react-navigation": "^1.0.0-beta.13"
-  }
+ "name": "crowdsense",
+ "scripts": {
+  "start": "node node_modules/react-native/local-cli/cli.js start",
+  "test": "jest"
+ },
+ "dependencies": {
+  "expo": "^15.0.0",
+  "lodash.capitalize": "^4.2.1",
+  "moment": "^2.19.1",
+  "react": "~15.4.0",
+  "react-native": "~0.42.2",
+  "react-native-beacons-manager": "^1.0.1",
+  "react-native-bluetooth-state": "^2.0.0",
+  "react-native-navigation": "^1.1.246",
+  "react-navigation": "^1.0.0-beta.13"
+ },
+ "devDependencies": {
+  "babel-eslint": "^7.1.1",
+  "babel-jest": "19.0.0",
+  "babel-preset-react-native": "1.9.1",
+  "eslint": "^3.16.0",
+  "eslint-plugin-react": "^6.10.0",
+  "eslint-plugin-react-native": "^2.2.1",
+  "jest": "19.0.0",
+  "react-test-renderer": "~15.4.0"
+ },
+ "jest": {
+  "preset": "react-native"
+ }
 }

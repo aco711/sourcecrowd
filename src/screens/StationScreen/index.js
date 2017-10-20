@@ -13,16 +13,8 @@ class StationScreen extends Component {
         };
     }
 
-    static navigationOptions = ({ navigation }) => {
-        const { data } = navigation.state.params;
-        return {
-            title: data.title
-        }
-    };
-
     render() {
-        const { navigate } = this.props.navigation;
-        const { data } = this.props.navigation.state.params;
+        const { navigator, data } = this.props;
 
         return (
             <View style={ styles.container }>
@@ -34,7 +26,7 @@ class StationScreen extends Component {
                         <Feed
                             data={ data } 
                             filter={ datum => datum.type === 'note' }
-                            navigation={ this.props.navigation }
+                            navigator={ navigator }
                         />
                     </View>
                     <View style={ styles.feedContainer }>
@@ -44,13 +36,19 @@ class StationScreen extends Component {
                         <Feed
                             data={ data } 
                             filter={ datum => datum.type === 'discussion' }
-                            navigation={ this.props.navigation }
+                            navigator={ navigator }
                         />
                     </View>
                     <View style={ styles.repliesBottomSpacer } />
                 </ScrollView>
                 <BottomButton 
-                    onPress={ () => navigate('AddPostScreen', { data, updateParent: () => { this.setState({ flip: !this.state.flip }) } }) }
+                    onPress={ () => navigator.push({
+                        screen: 'AddPostScreen',
+                        passProps: {
+                            data,
+                            updateParent: () => { this.setState({ flip: !this.state.flip }) }
+                        }
+                    }) }
                     title="Add a new note or discussion"
                 />
             </View>

@@ -6,14 +6,11 @@ import BottomButton from '../../components/BottomButton';
 import API from '../../lib/api';
 
 class AddPostScreen extends Component {
-    static navigationOptions = ({ navigation }) => ({
-        title: `New Post in ${ navigation.state.params.data.title }`
-    });
 
     constructor(props) {
         super(props);
         this.state = {
-            titleText: '',
+            titleText: 'kawjefiajew;ofi',
             bodyText: '',
             type: 'note',
             keyboardUp: false
@@ -43,8 +40,7 @@ class AddPostScreen extends Component {
     }
 
     submitPost = () => {
-        const { goBack } = this.props.navigation;
-        const { data, updateParent } = this.props.navigation.state.params;
+        const { navigator, data, updateParent } = this.props;
         const { titleText, bodyText, type } = this.state;
 
         API.addPost({
@@ -57,12 +53,11 @@ class AddPostScreen extends Component {
         });
 
         updateParent();
-        goBack();
+        navigator.pop();
     }
 
     render() {
-        const { navigate } = this.props.navigation;
-        const { data } = this.props.navigation.state.params;
+        const { data } = this.props;
 
         return (
             <View style={ styles.container }>
@@ -70,7 +65,8 @@ class AddPostScreen extends Component {
                     <View style={ styles.titleInputContainer }>
                         <TextInput
                             style={ styles.titleInput }
-                            placeholder={`New Post in ${ data.title }`}
+                            placeholder="New Post"
+                            value={ this.state.titleText }
                             onChangeText={ (text) => { this.setState({titleText: text}) }}
                             multiline={ true }
                         />

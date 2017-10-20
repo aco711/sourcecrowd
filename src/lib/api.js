@@ -12,12 +12,10 @@ class API {
 
     addPost(post) {
         this.data.posts.push(post);
-        this.updateDataStore();
     }
 
     addReply(post, reply) {
         post.replies.push(reply);
-        this.updateDataStore();
     }
 
     async updateDataStore() {

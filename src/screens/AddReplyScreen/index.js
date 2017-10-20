@@ -6,14 +6,10 @@ import BottomButton from '../../components/BottomButton';
 import API from '../../lib/api';
 
 class AddReplyScreen extends Component {
-    static navigationOptions = ({ navigation }) => ({
-        title: `New Reply in ${ navigation.state.params.post.title }`
-    });
-
     constructor(props) {
         super(props);
         this.state = {
-            bodyText: '',
+            bodyText: 'fakwefhawef',
             keyboardUp: false
         };
     }
@@ -41,23 +37,21 @@ class AddReplyScreen extends Component {
     }
 
     submitReply = () => {
-        const { goBack } = this.props.navigation;
-        const { post, updateParent } = this.props.navigation.state.params;
+        const { navigator, post, updateParent } = this.props;
         const { bodyText } = this.state;
 
-        API.addReply(post, {
-            body: bodyText,
-            author: 'Me',
-            timestamp: Date.now(),
-        });
+        // API.addReply(post, {
+        //     body: bodyText,
+        //     author: 'Me',
+        //     timestamp: Date.now(),
+        // });
 
         updateParent();
-        goBack();
+        navigator.pop();
     }
 
     render() {
-        const { navigate } = this.props.navigation;
-        const { post } = this.props.navigation.state.params;
+        const { post } = this.props;
 
         return (
             <View style={ styles.container }>
@@ -71,6 +65,7 @@ class AddReplyScreen extends Component {
                             placeholder="Add your reply here"
                             onChangeText={ (text) => { this.setState({bodyText: text}) }}
                             onSubmitEditing={ () => this.submitReply() }
+                            value={ this.state.bodyText }
                         />
                     </View>
                 </View>

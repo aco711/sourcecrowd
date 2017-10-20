@@ -5,7 +5,7 @@ import styles from './styles';
 
 const PostCard = ({ 
     post,
-    navigation
+    navigator
 }) => {
     const {
         title,
@@ -32,7 +32,10 @@ const PostCard = ({
 
     return (
         <TouchableHighlight
-            onPress={ () => navigation.navigate('PostScreen', { post }) }
+            onPress={ () => navigator.push({
+                screen: 'PostScreen',
+                passProps: { post }
+            }) }
         >
             { card }
         </TouchableHighlight>
