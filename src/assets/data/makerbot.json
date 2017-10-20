@@ -4,96 +4,70 @@
     "posts": [
         {
             "title": "There's a blue light that won’t turn off",
-            "body": "I’ve burned through three pieces of wood already  by using too much power on the laser cutter. Does anyone have a good guide on power settings to use on wood?",
             "type": "note",
             "station": "Makerbot Replicator",
-            "timestamp": 20,
+            "timestamp": 1508468379018,
             "author": "Ken M.",
             "replies": [
                 {
                     "body": "We’ve checked out the light. The filter needed changing, and we’ve swapped it out with a new one.",
                     "author": "Beth",
-                    "timestamp": 20
+                    "timestamp": 1508469378018
                 },
                 {
-                    "body": "We’ve checked out the light. The filter needed changing, and we’ve swapped it out with a new one.",
-                    "author": "Beth",
-                    "timestamp": 20
-                },
-                {
-                    "body": "We’ve checked out the light. The filter needed changing, and we’ve swapped it out with a new one.",
-                    "author": "Beth",
-                    "timestamp": 20
-                },
-                {
-                    "body": "We’ve checked out the light. The filter needed changing, and we’ve swapped it out with a new one.",
-                    "author": "Beth",
-                    "timestamp": 20
-                },
-                {
-                    "body": "We’ve checked out the light. The filter needed changing, and we’ve swapped it out with a new one.",
-                    "author": "Beth",
-                    "timestamp": 20
-                },
-                {
-                    "body": "We’ve checked out the light. The filter needed changing, and we’ve swapped it out with a new one.",
-                    "author": "Beth",
-                    "timestamp": 20
-                },
-                {
-                    "body": "We’ve checked out the light. The filter needed changing, and we’ve swapped it out with a new one.",
-                    "author": "Beth",
-                    "timestamp": 20
-                },
-                {
-                    "body": "We’ve checked out the light. The filter needed changing, and we’ve swapped it out with a new one.",
-                    "author": "Beth",
-                    "timestamp": 20
+                    "body": "Thanks!",
+                    "author": "Ken M.",
+                    "timestamp": 1508469379018
                 }
             ]
         },
         {
-            "title": "There's a blue light that won’t turn off",
-            "body": "I’ve burned through three pieces of wood already  by using too much power on the laser cutter. Does anyone have a good guide on power settings to use on wood?",
+            "title": "3D Builder is Saying “One or more objects is invalidly defined",
+            "body": "Currently, 3D Builder is telling me \"one or more objects are invalidly defined. Click here to repair.\" What is this and what does it mean? When I click it, it totally messes up my model (I can't tell what it even did due to the orthogonal camera).",
             "type": "note",
             "station": "Makerbot Replicator",
-            "timestamp": 20,
+            "timestamp": 1508469378018,
             "author": "Ken M.",
             "replies": [
                 {
-                    "body": "We’ve checked out the light. The filter needed changing, and we’ve swapped it out with a new one.",
+                    "body": "SketchUp is notorious for creating non-manifold (non-3D-printable) models. You would be much better off to learn to use a different, better suited program for your purposes. Disregarding that aspect for the moment, your model prior to repair appears to be a general rectangular prismatic shape with dividers. Unfortunately, those dividers also appear to have zero wall thickness. One must create objects with thickness (minimum should be no lower than your nozzle diameter) in order to have that portion addressed.",
                     "author": "Beth",
-                    "timestamp": 20
+                    "timestamp": 1508469388018
                 }
             ]
         },
         {
-            "title": "What are the best settings for engraving on wood?",
-            "body": "I’ve burned through three pieces of wood already  by using too much power on the laser cutter. Does anyone have a good guide on power settings to use on wood?",
+            "title": "Print Nozzle Dragging and Smearing Filament while Printing",
+            "body": "My current problem is that the nozzle appears to be dragging on the top of the layers. I can't tell if it's over extrusion or a layer height issue or what. I am testing by printing the 20mm calibration cube. The dimensions appear to be spot-on, but the layers start building up too much filament such that it just gets re-melted and shuffled around. Anyone have a clue what this could be? Software, Hardware, Slic3r Settings? I have: 0.5mm Nozzle Diameter. MK8 Direct Drive extruder. Anything else you want to know? Thanks!",
             "type": "discussion",
             "station": "Makerbot Replicator",
-            "timestamp": 20,
+            "timestamp": 1508469376018,
             "author": "Ken M.",
             "replies": [
                 {
-                    "body": "We’ve checked out the light. The filter needed changing, and we’ve swapped it out with a new one.",
+                    "body": "You stated your print of a 20mm cube came out spot on so I will rule out any z-axis configuration issues. It clearly seems like you are extruding too much plastic.",
                     "author": "Beth",
-                    "timestamp": 20
+                    "timestamp": 1508469377018
+                },
+                {
+                    "body": "If all these Slic3r configurations fail or are correct and do not solve your problem, I think you may want to look into your motor step settings for the extruder. It may be too high pushing more filament than it should. To correct this, you need to do the length test where you will extrude 10mm or 50mm and measure the string of plastic. There might be some stretch so a 10mm may measure as 11mm but as long as your close it should be good. If you extrude 10mm and you measure 25mm, you need to recalculate your steps per mm.",
+                    "author": "Athanasios Karagiannis",
+                    "timestamp": 1508469378018
                 }
             ]
         },
         {
-            "title": "What are the best settings for engraving on wood?",
-            "body": "I’ve burned through three pieces of wood already  by using too much power on the laser cutter. Does anyone have a good guide on power settings to use on wood?",
+            "title": "Wavy walls with Cura",
+            "body": "I've printed a 2x2x2cm test cube with Slic3r (left) and Cura (right) and my Prusa i3 derivative machine with tight belts. The print settings should be quite equal (0.15mm layer height, 40mm/s outer wall speed, default accelerations/jerks). Though the top surface of the Cura-cube looks much better than the Slic3r-cube",
             "type": "discussion",
             "station": "Makerbot Replicator",
-            "timestamp": 20,
+            "timestamp": 1508469377028,
             "author": "Ken M.",
             "replies": [
                 {
-                    "body": "We’ve checked out the light. The filter needed changing, and we’ve swapped it out with a new one.",
-                    "author": "Beth",
-                    "timestamp": 20
+                    "body": "Those wavy lines could be artefacts caused by closely-spaced infill, but they could also be resonance patterns caused by noisy stepper motors and over-tight belts. Since you have said that you have your belts nice and tight, I would suggest reducing the tension on them and see what happens. I know that some pundits say that it is not possible to have timing belts too tight, but I disagree with that. Belts should obviously be tight enough to eliminate free play in the system, and you may have a lot of latitude in the tensions that you can use, but if you make them drum-tight, they will transmit motor vibrations very effectively to the build plate (and onto your models).",
+                    "author": "Steve-O-Rama",
+                    "timestamp": 1508469477028
                 }
             ]
         }

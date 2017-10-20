@@ -1,0 +1,26 @@
+dependencies: \
+  /Users/josh/Code/sourcecrowd/node_modules/react-native/React/Base/RCTJavaScriptLoader.mm \
+  /Users/josh/Code/sourcecrowd/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/josh/Code/sourcecrowd/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/josh/Code/sourcecrowd/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/JSBundleType.h \
+  /Users/josh/Code/sourcecrowd/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JavaScriptCore.h \
+  /Users/josh/Code/sourcecrowd/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCWrapper.h \
+  /Users/josh/Code/sourcecrowd/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/josh/Code/sourcecrowd/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/josh/Code/sourcecrowd/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/josh/Code/sourcecrowd/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/josh/Code/sourcecrowd/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/josh/Code/sourcecrowd/node_modules/react-native/React/Base/RCTConvert.h \
+  /Users/josh/Code/sourcecrowd/node_modules/react-native/React/Views/RCTAnimationType.h \
+  /Users/josh/Code/sourcecrowd/node_modules/react-native/React/Views/RCTBorderStyle.h \
+  /Users/josh/Code/sourcecrowd/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/josh/Code/sourcecrowd/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/josh/Code/sourcecrowd/node_modules/react-native/React/Views/RCTPointerEvents.h \
+  /Users/josh/Code/sourcecrowd/node_modules/react-native/React/Views/RCTTextDecorationLineType.h \
+  /Users/josh/Code/sourcecrowd/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/josh/Code/sourcecrowd/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/josh/Code/sourcecrowd/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/josh/Code/sourcecrowd/node_modules/react-native/React/Base/RCTMultipartDataTask.h \
+  /Users/josh/Code/sourcecrowd/node_modules/react-native/React/Base/RCTMultipartStreamReader.h \
+  /Users/josh/Code/sourcecrowd/node_modules/react-native/React/Base/RCTPerformanceLogger.h \
+  /Users/josh/Code/sourcecrowd/node_modules/react-native/React/Base/RCTUtils.h
